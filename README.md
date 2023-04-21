@@ -1,0 +1,1 @@
+To run this website, download the folder and navigate to it in your terminal and use the command: php -S localhost:8000

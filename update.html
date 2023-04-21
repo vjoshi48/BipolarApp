@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Survey</title>
+</head>
+<body>
+    <h1>Survey</h1>
+
+<form action="update_data.php" method="post">
+	<p>Enter the date you want to do entries for in the format (yyyy-mm-dd):</p>
+	<input type="date" id="log_date" name="log_date" pattern="\d{4}-\d{2}-\d{2}" min="1900-01-01" max="2099-12-31" required><br>		
+
+	<h2> Symptom Check </h2>
+	<p>Rate your mood from 1-10:</p>
+	<input type="number" id="mood" name="mood" min="0" max="10"><br>
+
+	<p>Rate your irritability from 1-10:</p>
+	<input type="number" id="irritability" name="irritability" min="1" max="10"><br>
+
+	<p>Rate how you feel about yourself from 1-10:</p>
+	<input type="number" id="self-feelings" name="self-feelings" min="1" max="10"><br>
+
+	<p>How many hours of sleep did you get the previous night?</p>
+	<input type="number" id="sleep-hours" name="sleep-hours" min="0" max="24"><br>
+
+	<p>Rate your energy level from 1-10:</p>
+	<input type="number" id="energy" name="energy" min="1" max="10"><br>
+
+	<p>Have you been more talkative or social than usual?</p>
+	<input type="radio" id="yes" name="social-interaction" value="yes">
+	<label for="yes">Yes</label> <br>
+	<input type="radio" id="no" name="social-interaction" value="no">
+	<label for="no">No</label><br>
+
+	<p>Have you been feeling like your thoughts are racing?</p>
+	<input type="radio" id="yes" name="thoughts-racing" value="yes">
+	<label for="yes">Yes</label> <br>
+	<input type="radio" id="no" name="thoughts-racing" value="no">
+	<label for="no">No</label><br>
+
+	<p>Are you easily distracted?</p>
+	<input type="radio" id="yes" name="distracted" value="yes">
+	<label for="yes">Yes</label> <br>
+	<input type="radio" id="no" name="distracted" value="no">
+	<label for="no">No</label><br>
+
+	<p>Have you been working on goals (social, occupational, etc), or have you felt an excessive need to move?</p>
+	<input type="radio" id="yes" name="goals" value="yes">
+	<label for="yes">Yes</label> <br>
+	<input type="radio" id="no" name="goals" value="no">
+	<label for="no">No</label><br>
+
+	<p>Have you been fidgeting excessively, or have you felt extremely slow and heavy?</p>
+	<input type="radio" id="yes" name="restless" value="yes">
+	<label for="yes">Yes</label> <br>
+	<input type="radio" id="no" name="restless" value="no">
+	<label for="no">No</label><br>
+
+	<p>Have you been engaging in risky behaviors more?</p>
+	<input type="radio" id="yes" name="risky-behaviors" value="yes">
+	<label for="yes">Yes</label> <br>
+	<input type="radio" id="no" name="risky-behaviors" value="no">
+	<label for="no">No</label><br>
+
+	<p>Have you used any drugs in the past 24 hours that may be causing these symptoms?</p>
+	<input type="radio" id="yes" name="drugs" value="yes">
+	<label for="yes">Yes</label> <br>
+	<input type="radio" id="no" name="drugs" value="no">
+	<label for="no">No</label><br>
+
+	<p>Have you been hospitalized/experienced psychotic features in the past 24 hours?</p>
+	<input type="radio" id="yes" name="hospitalized" value="yes">
+	<label for="yes">Yes</label> <br>
+	<input type="radio" id="no" name="hospitalized" value="no">
+	<label for="no">No</label><br>
+
+	<p>Have you been feeling like you aren’t as interested in activities as you used to be or don’t experience as much pleasure?</p>
+	<input type="radio" id="yes" name="interest" value="yes">
+	<label for="yes">Yes</label> <br>
+	<input type="radio" id="no" name="interest" value="no">
+	<label for="no">No</label><br>
+
+	<p>Has your appetite increased or decreased significantly in the past few days?</p>
+	<input type="radio" id="yes" name="appetite" value="yes">
+	<label for="increase">Yes</label> <br>
+	<input type="radio" id="no" name="appetite" value="no">
+	<label for="decrease">No</label><br>
+
+	<p> What is your current weight (lb)?</p>
+	<input type="number" id="weight" name="weight"><br>
+
+	<p>Do you have a hard time falling asleep or are sleeping much more than usual?</p>
+	<input type="radio" id="yes" name="sleeping" value="yes">
+	<label for="yes">Yes</label> <br>
+	<input type="radio" id="no" name="sleeping" value="no">
+	<label for="no">No</label><br>
+	
+	<p>Do you feel like you don’t have much energy? Does it feel like most things are exhausting and difficult?</p>
+	<input type="radio" name="low_energy" value="yes"> Yes<br>
+	<input type="radio" name="low_energy" value="no"> No<br><br>
+
+	<p>Do you feel worthless or like a bad person/do you feel high feelings of guilt?</p>
+	<input type="radio" name="guilt" value="yes"> Yes<br>
+	<input type="radio" name="guilt" value="no"> No<br><br>
+
+	<p>Do you have a hard time concentrating on tasks or have a hard time making decisions?</p>
+	<input type="radio" name="concentration" value="yes"> Yes<br>
+	<input type="radio" name="concentration" value="no"> No<br><br>
+
+	<p>Do you have suicidal thoughts or thoughts of dying? This can also look like wanting to go to sleep and never wake up or go away forever.</p>
+	<input type="radio" name="suicidal" value="yes"> Yes<br>
+	<input type="radio" name="suicidal" value="no"> No<br><br>
+
+	<p>Are any of these symptoms getting in the way of regular social, personal, economic, or occupational functioning?</p>
+	<input type="radio" name="impairment" value="yes"> Yes<br>
+	<input type="radio" name="impairment" value="no"> No<br><br>
+
+	<h2> Warning Signs</h2>
+	
+	<label for="warning_sign">Warning Sign (leave blank if none for today):</label>
+	<input type="text" id="warning_sign" name="warning_sign">
+	<br><br>
+	<input type="radio" name="episode" value="Depressive"> Depressive<br>
+	<input type="radio" name="episode" value="Manic"> Manic<br>
+	<input type="radio" name="episode" value="Hypomanic"> Hypomanic<br>
+	<br>
+	<label for="severity">How severe is the warning sign (0-10) (leave blank if none for today)?</label>
+	<input type="number" id="severity" name="severity" min="0" max="10">
+	<br><br>
+	<br>
+
+	<div>
+		<label for="warning_sign">Warning Sign (leave blank if none for today):</label>
+		<input type="text" id="warning_sign" name="warning_sign1">
+		<br><br>
+		
+		<input type="radio" name="episode1" value="Depressive"> Depressive<br>
+		<input type="radio" name="episode1" value="Manic"> Manic<br>
+		<input type="radio" name="episode1" value="Hypomanic"> Hypomanic<br>
+		<br>
+		
+		<label for="severity">How severe is the warning sign (0-10) (leave blank if none for today)?</label>
+		<input type="number" id="severity" name="severity1" min="0" max="10">
+		<br><br>
+		<br>
+	</div>
+
+	<div>
+		<label for="warning_sign">Warning Sign (leave blank if none for today):</label>
+		<input type="text" id="warning_sign" name="warning_sign2">
+		<br><br>
+		
+		<input type="radio" name="episode2" value="Depressive"> Depressive<br>
+		<input type="radio" name="episode2" value="Manic"> Manic<br>
+		<input type="radio" name="episode2" value="Hypomanic"> Hypomanic<br>
+		<br>
+		
+		<label for="severity">How severe is the warning sign (0-10) (leave blank if none for today)?</label>
+		<input type="number" id="severity" name="severity2" min="0" max="10">
+		<br><br>
+		<br>
+	</div>
+
+	<h2> Coping Skills</h2>
+	
+	<label for="coping_skill">Coping skill used and symptom that it helped with(leave blank if none for today):</label>
+	<input type="text" id="coping_skill" name="coping_skill">
+	<select name="symptoms_dropdown">
+		<option value="Depressed mood">Depressed mood</option>
+		<option value="Diminished ability to concentrate">Diminished ability to concentrate</option>
+		<option value="Fatigue">Fatigue</option>
+		<option value="Worthlessness or guilt">Worthlessness or guilt</option>
+		<option value="Suicidal Ideation">Suicidal Ideation</option>
+		<option value="Psychomotor agitation/retardation">Psychomotor agitation/retardation</option>
+		<option value="Weight loss/gain/appetite change">Weight loss/gain/appetite change</option>
+		<option value="Loss of interest or pleasure">Loss of interest or pleasure</option>
+		<option value="Insomnia/hypersomnia">Insomnia/hypersomnia</option>
+		<option value="Racing thoughts/Flight of ideas">Racing thoughts/Flight of ideas</option>
+		<option value="Increase in goal-directed activity/psychomotor agitation">Increase in goal-directed activity/psychomotor agitation</option>
+		<option value="Excessive high-risk activities">Excessive high-risk activities</option>
+		<option value="Increased talkativeness">Increased talkativeness</option>
+		<option value="Distractibility">Distractibility</option>
+		<option value="Euphoria/elation">Euphoria/elation</option>
+		<option value="Irritability">Irritability</option>
+		<option value="Increased self-esteem/grandiosity">Increased self-esteem/grandiosity</option>
+		<option value="Decreased need for sleep">Decreased need for sleep</option>
+		<option value="Hospitalization/Psychosis">Hospitalization/Psychosis</option>
+		<option value="High energy">High energy</option>
+	  </select>
+	<br><br>
+	<br>
+
+	<div>
+		<label for="coping_skill1">Coping skill used and symptom that it helped with(leave blank if none for today):</label>
+		<input type="text" id="coping_skill1" name="coping_skill1">
+		<select name="symptoms_dropdown1">
+			<option value="Depressed mood">Depressed mood</option>
+			<option value="Diminished ability to concentrate">Diminished ability to concentrate</option>
+			<option value="Fatigue">Fatigue</option>
+			<option value="Worthlessness or guilt">Worthlessness or guilt</option>
+			<option value="Suicidal Ideation">Suicidal Ideation</option>
+			<option value="Psychomotor agitation/retardation">Psychomotor agitation/retardation</option>
+			<option value="Weight loss/gain/appetite change">Weight loss/gain/appetite change</option>
+			<option value="Loss of interest or pleasure">Loss of interest or pleasure</option>
+			<option value="Insomnia/hypersomnia">Insomnia/hypersomnia</option>
+			<option value="Racing thoughts/Flight of ideas">Racing thoughts/Flight of ideas</option>
+			<option value="Increase in goal-directed activity/psychomotor agitation">Increase in goal-directed activity/psychomotor agitation</option>
+			<option value="Excessive high-risk activities">Excessive high-risk activities</option>
+			<option value="Increased talkativeness">Increased talkativeness</option>
+			<option value="Distractibility">Distractibility</option>
+			<option value="Euphoria/elation">Euphoria/elation</option>
+			<option value="Irritability">Irritability</option>
+			<option value="Increased self-esteem/grandiosity">Increased self-esteem/grandiosity</option>
+			<option value="Decreased need for sleep">Decreased need for sleep</option>
+			<option value="Hospitalization/Psychosis">Hospitalization/Psychosis</option>
+			<option value="High energy">High energy</option>
+		  </select>
+		<br><br>
+		<br>
+	</div>
+
+	<br><br>
+	<h2>Interventions:</h2>
+	<label for="intervention-name">Intervention Name:</label>
+	<input type="text" id="intervention-name" name="intervention-name" >
+	<br><br>
+	<label for="intervention-dosage">Dosage:</label>
+	<input type="number" id="intervention-dosage" name="intervention-dosage" >
+	<label for="unit">Unit of measurement (g, mg, etc):</label>
+	<input type="text" id="unit" name="unit" ><br>
+	<label for="symptoms">Symptom this intervention helped with:</label>
+	<select name="symptoms">
+		<option value="Depressed mood">Depressed mood</option>
+		<option value="Diminished ability to concentrate">Diminished ability to concentrate</option>
+		<option value="Fatigue">Fatigue</option>
+		<option value="Worthlessness or guilt">Worthlessness or guilt</option>
+		<option value="Suicidal Ideation">Suicidal Ideation</option>
+		<option value="Psychomotor agitation/retardation">Psychomotor agitation/retardation</option>
+		<option value="Weight loss/gain/appetite change">Weight loss/gain/appetite change</option>
+		<option value="Loss of interest or pleasure">Loss of interest or pleasure</option>
+		<option value="Insomnia/hypersomnia">Insomnia/hypersomnia</option>
+		<option value="Racing thoughts/Flight of ideas">Racing thoughts/Flight of ideas</option>
+		<option value="Increase in goal-directed activity/psychomotor agitation">Increase in goal-directed activity/psychomotor agitation</option>
+		<option value="Excessive high-risk activities">Excessive high-risk activities</option>
+		<option value="Increased talkativeness">Increased talkativeness</option>
+		<option value="Distractibility">Distractibility</option>
+		<option value="Euphoria/elation">Euphoria/elation</option>
+		<option value="Irritability">Irritability</option>
+		<option value="Increased self-esteem/grandiosity">Increased self-esteem/grandiosity</option>
+		<option value="Decreased need for sleep">Decreased need for sleep</option>
+		<option value="Hospitalization/Psychosis">Hospitalization/Psychosis</option>
+		<option value="High energy">High energy</option>
+	  </select>
+	<br><br>
+
+	<label for="intervention-name1">Intervention Name:</label>
+	<input type="text" id="intervention-name1" name="intervention-name1" >
+	<br><br>
+	<label for="intervention-dosage">Dosage:</label>
+	<input type="number" id="intervention-dosage1" name="intervention-dosage1" >
+	<label for="unit">Unit of measurement (g, mg, etc):</label>
+	<input type="text" id="unit1" name="unit1" ><br>
+	<label for="symptoms1">Symptom this intervention helped with:</label>
+	<select name="symptoms1">
+		<option value="Depressed mood">Depressed mood</option>
+		<option value="Diminished ability to concentrate">Diminished ability to concentrate</option>
+		<option value="Fatigue">Fatigue</option>
+		<option value="Worthlessness or guilt">Worthlessness or guilt</option>
+		<option value="Suicidal Ideation">Suicidal Ideation</option>
+		<option value="Psychomotor agitation/retardation">Psychomotor agitation/retardation</option>
+		<option value="Weight loss/gain/appetite change">Weight loss/gain/appetite change</option>
+		<option value="Loss of interest or pleasure">Loss of interest or pleasure</option>
+		<option value="Insomnia/hypersomnia">Insomnia/hypersomnia</option>
+		<option value="Racing thoughts/Flight of ideas">Racing thoughts/Flight of ideas</option>
+		<option value="Increase in goal-directed activity/psychomotor agitation">Increase in goal-directed activity/psychomotor agitation</option>
+		<option value="Excessive high-risk activities">Excessive high-risk activities</option>
+		<option value="Increased talkativeness">Increased talkativeness</option>
+		<option value="Distractibility">Distractibility</option>
+		<option value="Euphoria/elation">Euphoria/elation</option>
+		<option value="Irritability">Irritability</option>
+		<option value="Increased self-esteem/grandiosity">Increased self-esteem/grandiosity</option>
+		<option value="Decreased need for sleep">Decreased need for sleep</option>
+		<option value="Hospitalization/Psychosis">Hospitalization/Psychosis</option>
+		<option value="High energy">High energy</option>
+	  </select>
+	<br><br>
+
+	<h2>Medication:</h2>
+	<label for="medication-name">Medication Name:</label>
+	<input type="text" id="medicationn-name" name="medication-name" >
+	<br><br>
+	<label for="medication-dosage">Dosage:</label>
+	<input type="number" id="medication-dosage" name="medication-dosage" >
+	<label for="unit">Unit of measurement (g, mg, etc):</label>
+	<input type="text" id="medication_unit" name="medication_unit" >
+	<label for="prescribing-doctor">Prescribing Doctor:</label>
+	<input type="text" id="prescribing-doctor" name="prescribing-doctor" >
+	<br><br>
+	<label for="side-effect-name">Side Effects (leave blank if none):</label>
+	<input type="text" id="side-effect-name" name="side-effect-name" >
+	<br><br>
+	<label for="side-effect-severity">Side Effect Severity (0-10):</label>
+	<input type="number" id="side-effect-severity" name="side-effect-severity" min="0" max="10" >
+	<br><br>
+
+	<input type="submit" value="Submit" onclick="redirectToWelcome()">
+</form>
+<p><a href="welcome.html">Return to home</a></p>
+<script>
+	function redirectToWelcome() {
+		window.location.href = "welcome.html";
+	}
+</script>
+</body>
+</html>
